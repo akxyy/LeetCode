@@ -1,0 +1,13 @@
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        h={}
+
+        //create a hashset using value as index
+        for i in range(len(nums)):
+            h[nums[i]]=i
+        
+        //check whether the target present in hashset and also verify their indices arent same
+        for i in range(len(nums)):
+            y=target-nums[i]
+            if y in h and h[y]!=i:
+                return [y,h[y]]
